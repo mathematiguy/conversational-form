@@ -50,7 +50,7 @@
 
 		<main id="conversational-form-docs" class="content">
 			<menu id="small-screen-menu">
-				<h2>Conversational Form</h2>
+				<h2>So you want to start a business?</h2>
 
 				<div class="switch-btn">
 					<label class="switch">
@@ -166,60 +166,86 @@
 					</fieldset>
 
 					<fieldset>
-						<label for="occupation">Occupation</label>
+						<label for="location">location</label>
 						<div class="radio">
 						<label>
-							<input cf-questions="Great to meet you, {previous-answer}! I'm a web form, where are you based?|Awesome, {previous-answer}! And where are you based?" type="radio" name="occupation" id="occupation-1" value="developer">
+							<input cf-questions="Great to meet you, {previous-answer}! I'm a web form, where are you based?|Awesome, {previous-answer}! And where are you based?" type="radio" name="location" id="location-1" value="Auckland">
 							Auckland
 						</label>
 						</div>
 						<div class="radio">
 						<label>
-							<input type="radio" name="occupation" id="occupation-2" value="designer">
+							<input type="radio" name="location" id="location-2" value="Hamilton">
 							Hamilton
 						</label>
 						</div>
 						<div class="radio">
 						<label>
-							<input type="radio" name="occupation" id="occupation-3" value="curious-mind">
+							<input type="radio" name="location" id="location-3" value="Tauranga">
 							Tauranga
 						</label>
 						</div>
 						<div class="radio">
 							<label>
-								<input type="radio" name="occupation" id="occupation-4" value="lost">
+								<input type="radio" name="location" id="location-4" value="Wellington">
 								Wellington
 							</label>
 						</div>
 						<div class="radio">
 							<label>
-								<input type="radio" name="occupation" id="occupation-5" value="lost">
+								<input type="radio" name="location" id="location-5" value="Christchurch">
 								Christchurch
 							</label>
 						</div>
 						<div class="radio">
 							<label>
-								<input type="radio" name="occupation" id="occupation-6" value="lost">
+								<input type="radio" name="location" id="location-6" value="Dunedin">
 								Dunedin
 							</label>
 						</div>
+						<!-- <div class="radio">
+						<label>
+							<input type="radio" name="location" id="location-7" value="Peppercorns">
+							Peppercorns
+						</label> -->
 					</fieldset>
 
 					<fieldset>
 						<label for="company-name">Company Name</label>
-						<input cf-questions="I like {occupation} too! What would you like the name of your business to be?
+						<input cf-questions="I like {location} too! What would you like the name of your business to be?
 " type="text" class="form-control" name="company-name" id="company-name">
 					</fieldset>
 
-					<fieldset>
-						<label for="opinion">Will conversational interfaces be everywhere?</label>
-						<select cf-questions="Do you think conversational forms will replace web forms in the future?" name="opinion" id="opinion" class="form-control">
-							<option></option>
-							<option>Definitely</option>
-							<option>Maybe</option>
-							<option>No</option>
-						</select>
+					<!-- <fieldset>
+						<div class="radio">
+						<label>
+							<input required cf-questions="Cool! Have you registered {company-name} yet?" type="radio" name="occupation" id="company-registered-1" value="designer">
+							Yep
+						</label>
+						<label>
+							<input type="radio" name="occupation" id="company-registered-2" value="designer">
+							Nope
+						</label>
+						</div>
+					</fieldset> -->
+
+					<fieldset required cf-questions="Cool! Have you registered {company-name} yet?">
+						<input type="radio" name="company-registered" id="company-registered-1" value="yes">
+						<label for="company-registered-yes">
+							Yep
+						</label>
+
+						<input type="radio" name="company-registered" id="company-registered-2" value="no">
+						<label for="company-registered-no">
+							Nope
+						</label>
 					</fieldset>
+
+					<!--this input tag shows only if radio button with value yes was clicked-->
+					<input
+						type="text"
+						cf-questions="Question to ask.."
+						cf-conditional-company-registered="yes" /> <!-- here we do the mapping -->
 
 					<fieldset>
 						<label for="email">Email</label>
