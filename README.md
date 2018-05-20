@@ -6,6 +6,8 @@ The rules and research that informed the project are also included in the `/reso
 
 For more information about how the chatbot part works, check out [space10's original github repo](https://github.com/space10-community/conversational-form). We also recommend the [project wiki](https://space10-community.github.io/conversational-form/docs/0.9.80/getting-started/), which was very useful.
 
+![](resources/screenshot.png)
+
 ## Quick Start
 
 Simply clone the repo and set up a local http server [following this example](http://jasonwatmore.com/post/2016/06/22/nodejs-setup-simple-http-server-local-web-server) (requires npm).
