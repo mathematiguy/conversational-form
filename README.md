@@ -1,6 +1,12 @@
-# Conversational Form
+# Start a Business in NZ (Website)
 
-**Turning web forms into conversations.** Conversational Form is an open-source concept by [SPACE10](https://www.space10.io) to easily turn any form element on a web page into a conversational form interface. It features conversational replacement of all input elements, reusable variables from previous questions and complete customization and control over the styling.
+This website is a fork of the `space10-community/conversational-form` project. It implements a simple chat bot for informing kiwis who want to start a business on what requirements they might have for compliance with the complex nz business law landscape.
+
+The rules and research that informed the project are also included, as well as a link to the (currently online) website.
+
+For more information about how the chatbot part works, check out ["space10's original github repo"](https://github.com/space10-community/conversational-form).
+
+
 
 <p align="center">
 	<a href="https://medium.com/conversational-interfaces/introducing-the-conversational-form-c3166eb2ee2f#.yq5axcfcq"><strong>Learn why we did it</strong></a>
