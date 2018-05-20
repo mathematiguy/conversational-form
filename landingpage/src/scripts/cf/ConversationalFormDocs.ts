@@ -245,7 +245,7 @@ class ConversationalFormDocs{
 				const submitForm = (successCallback: () => void = null) => {
 					const xhr: XMLHttpRequest = new XMLHttpRequest();
 					xhr.addEventListener("load", () =>{
-						this.cf.addRobotChatResponse("We received your submission 🙌");
+						this.cf.addRobotChatResponse("Your email has been sent! 🙌");
 						if(successCallback)
 							successCallback();
 					});

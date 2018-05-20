@@ -1,5 +1,8 @@
 <!DOCTYPE HTML>
 <html lang="en">
+<!-- <header>
+	<link href="https://fonts.googleapis.com/css?family=Arvo" rel="stylesheet">
+</header> -->
 
 	<head>
 		<title>Starting a business</title>
@@ -42,7 +45,7 @@
 		 <script type="text/javascript" src="https://cf-4053.kxcdn.com/conversational-form/0.9.6/conversational-form.min.js?v=1.0.0" crossorigin></script>
 		<!-- Load docs -->
 		 <script src="build/conversational-form-docs.min.js?v=1.0.0"></script>  
-
+		 <link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
 		<!-- dev -> -->
 		<!-- <script id="conversational-form-development" src="../build/conversational-form.js"></script>
 		<script src="build/cf/ConversationalFormDocs.js"></script>
@@ -109,7 +112,7 @@
 						So you want to start a business?
 					</h1>
 					<h2>
-						Here is some basic descriptive text
+						An interactive walk-through how to start a business in New Zealand. 
 					</h2>
 
 
@@ -166,24 +169,24 @@
 					</fieldset>
 
 					<fieldset>
-						<label for="location">location</label>
+						<label for="location">Whare are you based?</label>
 						<div class="radio">
-						<label>
-							<input cf-questions="Great to meet you, {previous-answer}! I'm a web form, where are you based?|Awesome, {previous-answer}! And where are you based?" type="radio" name="location" id="location-1" value="Auckland">
-							Auckland
-						</label>
+							<label>
+								<input cf-questions="Great to meet you, {previous-answer}! I'm a web form, where are you based?|Awesome, {previous-answer}! And where are you based?" type="radio" name="location" id="location-1" value="Auckland">
+								Auckland
+							</label>
 						</div>
 						<div class="radio">
-						<label>
-							<input type="radio" name="location" id="location-2" value="Hamilton">
-							Hamilton
-						</label>
+							<label>
+								<input type="radio" name="location" id="location-2" value="Hamilton">
+								Hamilton
+							</label>
 						</div>
 						<div class="radio">
-						<label>
-							<input type="radio" name="location" id="location-3" value="Tauranga">
-							Tauranga
-						</label>
+							<label>
+								<input type="radio" name="location" id="location-3" value="Tauranga">
+								Tauranga
+							</label>
 						</div>
 						<div class="radio">
 							<label>
@@ -203,60 +206,108 @@
 								Dunedin
 							</label>
 						</div>
-						<!-- <div class="radio">
-						<label>
-							<input type="radio" name="location" id="location-7" value="Peppercorns">
-							Peppercorns
-						</label> -->
 					</fieldset>
 
 					<fieldset>
 						<label for="company-name">Company Name</label>
-						<input cf-questions="I like {location} too! What would you like the name of your business to be?
-" type="text" class="form-control" name="company-name" id="company-name">
+						<input cf-questions="What would you like the name of your business to be?</br></br>Just in case, you might want to check if the name exists at <a href='https://www.business.govt.nz/onecheck/' target='_blank'>business.govt.nz</a>" type="text" class="form-control" name="company-name" id="company-name">
 					</fieldset>
 
-					<!-- <fieldset>
+					<fieldset>
+						<label for="sole-trader">Are you a sole trader or a company?</label>
 						<div class="radio">
-						<label>
-							<input required cf-questions="Cool! Have you registered {company-name} yet?" type="radio" name="occupation" id="company-registered-1" value="designer">
-							Yep
-						</label>
-						<label>
-							<input type="radio" name="occupation" id="company-registered-2" value="designer">
-							Nope
-						</label>
+							<label>
+								<input cf-questions="Awesome, {name}! And is {company-name} going to be a sole trader or a company?" type="radio" name="sole-trader" id="sole-trader-1" value="Sole trader">
+								Sole trader
+							</label>
 						</div>
-					</fieldset> -->
-
-					<fieldset required cf-questions="Cool! Have you registered {company-name} yet?">
-						<input type="radio" name="company-registered" id="company-registered-1" value="yes">
-						<label for="company-registered-yes">
-							Yep
-						</label>
-
-						<input type="radio" name="company-registered" id="company-registered-2" value="no">
-						<label for="company-registered-no">
-							Nope
-						</label>
+						<div class="radio">
+							<label>
+								<input type="radio" name="sole-trader" id="sole-trader-2" value="Company">
+								Company
+							</label>
 					</fieldset>
 
-					<!--this input tag shows only if radio button with value yes was clicked-->
 					<input
 						type="text"
-						cf-questions="Question to ask.."
-						cf-conditional-company-registered="yes" /> <!-- here we do the mapping -->
+						cf-questions="Cool, well to become a sole trader you don’t need to follow any formal or legal processes to establish your business. </br></br>However, you do need:</br>- A personal IRD number for paying income tax and GST</br>- Government licences and permits</br>- Qualifications or registrations for your trade or profession.</br>- You’ll need to tell Inland Revenue you’ve become a sole trader</br>- You’ll also need to register for GST if you earn over $60,000 a year."
+						cf-conditional-sole-trader="Sole trader"/>
+
+					<input
+						cf-questions="In that case, make sure that you've registered {company-name} at <a href='https://companies-register.companiesoffice.govt.nz/' target='_blank'>companiesoffice.govt.nz</a>"
+						cf-conditional-sole-trader="Company"
+						name="company-registered" id="company-registered-1" value="Yes"/>
+
+					<fieldset>
+						<label for="food-seller">Are you a food seller?</label>
+						<div class="radio">
+							<label>
+								<input cf-questions="Awesome, {name}! So, is {company-name} going to sell food?" type="radio" name="food-seller" id="food-seller-1" value="Yes">
+								Yep
+							</label>
+						</div>
+						<div class="radio">
+							<label>
+								<input type="radio" name="food-seller" id="food-seller-2" value="No">
+								Nope
+							</label>
+					</fieldset>
+
+					<input
+						type="text"
+						cf-questions="You’ll need to register with MPI under the Food Act 2014 if you want to sell food.
+
+Check out the Food Act at <a href='https://www.mpi.govt.nz/food-safety/food-act-2014/ target='_blank''>mpi.govt.nz</a>"
+						cf-conditional-food-seller="Yes"/>
+
+					<fieldset>
+						<label for="public-place">Are your trading in a public place?</label>
+						<div class="radio">
+							<label>
+								<input cf-questions="And lastly, is {company-name} going to be trading in a public place?" type="radio" name="public-place" id="public-place-1" value="Yes">
+								Yep
+							</label>
+						</div>
+						<div class="radio">
+							<label>
+								<input type="radio" name="public-place" id="public-place-2" value="No">
+								Nope
+							</label>
+					</fieldset>
+
+					<input
+						type="text"
+						cf-questions="You’ll need to register with the Wellington City Council. See <a href='https://wellington.govt.nz/services/consents-and-licences/'>wellington.govt.nz</a> for more information."
+						cf-conditional-public-place="Yes"
+						cf-conditional-location="Wellington"/>
+
+					<input
+						type="text"
+						cf-questions="In that case, you'll need to register with your local council for a trading license. Check out <a href='http://www.localcouncils.govt.nz/lgip.nsf/wpg_URL/Profiles-Councils-by-Region-Index?OpenDocument' target='_blank'>localcouncils.govt.nz</a> to contact your local council"
+						cf-conditional-public-place="Yes"
+						cf-conditional-location="Auckland||Hamilton||Tauranga||Christchurch||Dunedin"/>
+
+					<!-- <fieldset required cf-questions="In that case, have you registered {company-name} yet?" cf-conditional-sole-trader="Company">
+						<label for="company-registered">Is your company registered?</label>
+						<input type="radio" name="company-registered" id="company-registered-yes" value="yes">
+						<label for="company-registered-yes">Yep</label>
+
+						<input type="radio" name="company-registered" id="company-registered-no" value="no">
+						<label for="company-registered-no">Nope</label>
+					</fieldset> -->
+
+					
 
 					<fieldset>
 						<label for="email">Email</label>
-						<input pattern=".+\@.+\..+" cf-error="E-mail not correct" cf-questions="If you want to stay updated on conversational interfaces from SPACE10, please give me your email." type="email" class="form-control" name="email" id="your-email">
+						<input pattern=".+\@.+\..+" cf-error="E-mail not correct" cf-questions="If you give me your email, I can forward you the details from this conversation so you can make further plans." type="email" class="form-control" name="email" id="your-email">
 					</fieldset>
 
 					<fieldset style="display: none;">
 						<label for="thats-all">Are you ready to submit the form?</label>
-						<select cf-questions="Are you ready to submit the form?" name="submit-form" id="submit-form" class="form-control">
+						<select cf-questions="Anyway, I hope that I managed to help. Thanks for your time, and best of luck on your business journey 😊" name="submit-form" id="submit-form" class="form-control">
 							<option></option>
-							<option>Yup</option>
+							<option>Thanks!</option>
 						</select>
 					</fieldset>
 
