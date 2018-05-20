@@ -14,7 +14,13 @@ Simply clone the repo and set up a local http server [following this example](ht
 
 ## Other points
 
-In the `/resources/assets` there are some graphics that we didn't manage to integrate in the time we had. `/resources/research/Question pseudocode.docx` contains the notes that motivated the internal logic for the bot. There are many other levels of regulation that we were unable to cover in the time we had.  
+- The lions share of the code edits were made in `/landingpage/index.html`. There were less than a handful of javascript edits made in other parts of the repo.
+
+- If you compare [space10-community/conversational-form](https://github.com/space10-community/conversational-form), there were no design changes made (but many attempted - the site is quite large and unwieldy for new people)
+
+- In the `/resources/assets` there are some graphics that we didn't manage to integrate in the time we had. 
+
+- `/resources/research/Question pseudocode.docx` contains the notes that motivated the internal logic for the bot. There are many other levels of regulation that we were unable to cover in the time we had.  
 
 ## Acknowledgements
 
